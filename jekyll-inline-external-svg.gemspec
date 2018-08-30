@@ -1,16 +1,16 @@
 # coding: utf-8
 
 Gem::Specification.new do |spec|
-  spec.name        = "jekyll-inline-svg"
+  spec.name        = "jekyll-inline-external-svg"
   spec.summary     = "A SVG Inliner for Jekyll"
   spec.description = <<-EOF
-  A Liquid tag to inline and optimize SVG images in your HTML
+  A Liquid tag to inline and optimize internal/external SVG images in your HTML
   Supports custom DOM Attributes parameters and variables interpretation.
   EOF
   spec.version     = "1.1.1"
   spec.authors     = ["Sebastien DUMETZ"]
   spec.email       = "s.dumetz@holusion.com"
-  spec.homepage    = "https://github.com/sdumetz/jekyll-inline-svg"
+  spec.homepage    = "https://github.com/bih/jekyll-inline-external-svg"
   spec.licenses    = ["GPL-3.0"]
 
   spec.files         = `git ls-files -z`.split("\x0")
