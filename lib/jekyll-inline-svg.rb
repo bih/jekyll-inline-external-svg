@@ -1,6 +1,7 @@
 require "nokogiri"
 require 'svg_optimizer'
 require 'jekyll/liquid_extensions'
+require 'open-uri'
 
 PLUGINS_BLACKLIST = [
   SvgOptimizer::Plugins::CleanupId,
@@ -123,7 +124,11 @@ module Jekyll
           params["height"] = params["width"]
         end
         #params = @params
-        file = File.open(svg_file, "rb").read
+        if params.key? "is_external"
+          file = open(svg_file).read
+        else
+          file = File.open(svg_file, "rb").read
+        end
         conf = lookup_variable(context,"site.svg")
         if conf["optimize"] == true
           xml = SvgOptimizer.optimize(file, [create_plugin(params)] + PLUGINS)
