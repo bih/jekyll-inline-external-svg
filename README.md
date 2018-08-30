@@ -1,18 +1,18 @@
-# jekyll-inline-svg
+# jekyll-inline-external-svg
 
-SVG optimizer and inliner for jekyll
+SVG optimizer and inliner for jekyll (with support for external SVG images)
 
 This liquid tag will let you inline SVG images in your jekyll sites. It will add `{%svg %}` to `Liquid::Tag`.
 
 ## Installation
 
-Run `gem install jekyll-inline-svg` or add `gem "jekyll-inline-svg", "~>0.0.1"` to your **Gemfile**.
+Run `gem install jekyll-inline-external-svg` or add `gem "jekyll-inline-external-svg", "~>0.0.1", github: "bih/jekyll-inline-external-svg"` to your **Gemfile**.
 
 Then in your **_config.yml** :
 
 ```
 gems:
-  - jekyll-inline-svg
+  - jekyll-inline-external-svg
 ```
 
 Optimization is opt-in and can be enabled by adding this to your `_config.yml`
@@ -28,6 +28,7 @@ Use the Liquid tag in your pages :
 
 ```
     {% svg /path/to/square.svg width=24 foo="bar" %}
+    {% svg /path/to/square.svg width=24 foo="bar" is_external="true" %}
 ```
 
 Jekyll will include the svg file in your output HTML like this :
